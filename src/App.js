@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import "antd/dist/antd.css";
 import { Redirect, Route, Switch } from 'react-router-dom';
@@ -34,7 +33,9 @@ class App extends React.Component{
           { 
             this.createRoute(adminRoutes)
           }
-          <Route path='/404' component={ LoadableUtils(() => import('./pages/PageNotFound')) } />
+          <Route path='/404' component={ LoadableUtils(() => import('./pages/Exception/404')) } />
+          <Route path='/403' component={ LoadableUtils(() => import('./pages/Exception/403')) } />
+          <Route path='/500' component={ LoadableUtils(() => import('./pages/Exception/500')) } />
           <Redirect to={adminRoutes[0].path} from="/admin" />
           <Redirect to="/404" />
         </Switch>

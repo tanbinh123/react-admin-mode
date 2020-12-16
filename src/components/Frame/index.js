@@ -112,10 +112,6 @@ class Frame extends React.Component{
                             minHeight: 280,
                         }}
                     >
-                        <div>
-                            
-                        <image src={ logo} alt="logo"/>
-                        </div>
                         { this.props.children }
                     </Content>
                 </Layout>
